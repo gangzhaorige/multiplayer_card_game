@@ -12,6 +12,5 @@ public class RequestLogin : NetworkRequest {
 	    packet = new GamePacket(request_id);
 		packet.addString(Constants.CLIENT_VERSION);
 		packet.addString(username);
-		packet.addString(password);
 	}
 }
