@@ -48,11 +48,7 @@ public class RequestLogin extends GameRequest {
                 //player = UsersDAO.getUserFromDbIfCredentialsAreValid(user_id, password);
                 // Let's make a fake user for showing a connection demo -- without proper DB set tup.
                 Log.printf("User '%s' entered passwd '%s'", user_id, password);
-                if(user_id.equals("ilmi") && password.equals("1111")) {
-                    player = new Player(100, "ilmi", "1111", (short) 1, 1000);
-                } else {
-                    player = new Player(101, "me", "2222", (short) 1, 1000);
-                }
+                player = new Player(100, user_id);
             }
             if (player == null) {
                 responseLogin.setStatus((short) 1); // User info is incorrect

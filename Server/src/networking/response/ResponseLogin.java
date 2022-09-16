@@ -25,8 +25,6 @@ public class ResponseLogin extends GameResponse {
         if (status == 0) {
             packet.addInt32(player.getID());
             packet.addString(player.getUsername());
-            packet.addInt32(player.getMoney());
-            packet.addShort16(player.getLevel());
         }
         return packet.getBytes();
     }
