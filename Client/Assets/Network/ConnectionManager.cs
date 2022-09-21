@@ -15,7 +15,7 @@ public class ConnectionManager : MonoBehaviour {
 	private bool socketReady = false;
 	
 	void Awake() {
-		mainObject = GameObject.Find("Networking");
+		mainObject = GameObject.Find("Network");
 	}
 	
 	// Use this for initialization
@@ -29,7 +29,7 @@ public class ConnectionManager : MonoBehaviour {
 			return;
 		}
 		try {
-			mySocket = new TcpClient (Constants.REMOTE_HOST, Constants.REMOTE_PORT);
+			mySocket = new TcpClient(Constants.REMOTE_HOST, Constants.REMOTE_PORT);
 			theStream = mySocket.GetStream();
 			socketReady = true;
 			Debug.Log("Connected");

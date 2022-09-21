@@ -14,6 +14,10 @@ public class Constants {
 	public static readonly short SMSG_PLAYERS = 203;
 	public static readonly short CMSG_TEST = 104;
 	public static readonly short SMSG_TEST = 204;
+	public static readonly short CMSG_START = 105;
+	public static readonly short SMSG_START = 205;
+	public static readonly short CMSG_GET_PLAYER_HAND = 106;
+	public static readonly short SMSG_GET_PLAYER_HAND = 206;
 	
 	// Other
 	public static readonly string IMAGE_RESOURCES_PATH = "Images/";
@@ -26,4 +30,5 @@ public class Constants {
 	};
 
 	public static int USER_ID = -1;
+	public static string USERNAME = null;
 }

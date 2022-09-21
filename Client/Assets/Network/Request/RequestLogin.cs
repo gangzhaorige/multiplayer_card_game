@@ -8,7 +8,7 @@ public class RequestLogin : NetworkRequest {
 		request_id = Constants.CMSG_AUTH;
 	}
 	
-	public void send(string username, string password) {
+	public void send(string username) {
 	    packet = new GamePacket(request_id);
 		packet.addString(Constants.CLIENT_VERSION);
 		packet.addString(username);

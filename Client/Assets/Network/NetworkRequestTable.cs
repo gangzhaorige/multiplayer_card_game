@@ -13,6 +13,8 @@ public class NetworkRequestTable {
 		add(Constants.CMSG_HEARTBEAT, "RequestHeartbeat");
 		add(Constants.CMSG_PLAYERS, "RequestPlayers");
 		add(Constants.CMSG_TEST, "RequestTest");
+		add(Constants.CMSG_START, "RequestStart");
+		// add(Constants.CMSG_GET_PLAYER_HAND, "RequestStart");
 	}
 	
 	public static void add(short request_id, string name) {
