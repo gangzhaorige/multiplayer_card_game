@@ -16,6 +16,7 @@ import java.util.concurrent.Executors;
 import configuration.GameServerConf;
 import metadata.Constants;
 import metadata.GameRequestTable;
+import model.Game;
 import model.Player;
 import utility.ConfFileParser;
 import utility.Log;
@@ -38,6 +39,7 @@ public class GameServer {
     // Reference Tables
     private Map<String, GameClient> activeThreads = new HashMap<String, GameClient>(); // Session ID -> Client
     private Map<Integer, Player> activePlayers = new HashMap<Integer, Player>(); // Player ID -> Player
+    private Game game;
     /**
      * Create the GameServer by setting up the request types and creating a
      * connection with the database.
@@ -165,6 +167,14 @@ public class GameServer {
     
     public void removeActivePlayer(int player_id) {
         activePlayers.remove(player_id);
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Game getGame() {
+        return this.game;
     }
 
     /**

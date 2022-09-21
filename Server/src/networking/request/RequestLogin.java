@@ -22,7 +22,6 @@ public class RequestLogin extends GameRequest {
     // Data
     private String version;
     private String user_id;
-    private String password;
     // Responses
     private ResponseLogin responseLogin;
 
@@ -34,7 +33,6 @@ public class RequestLogin extends GameRequest {
     public void parse() throws IOException {
         version = DataReader.readString(dataInput).trim();
         user_id = DataReader.readString(dataInput).trim();
-        password = DataReader.readString(dataInput).trim();
     }
 
     @Override
@@ -47,8 +45,12 @@ public class RequestLogin extends GameRequest {
                 // Verification Needed
                 //player = UsersDAO.getUserFromDbIfCredentialsAreValid(user_id, password);
                 // Let's make a fake user for showing a connection demo -- without proper DB set tup.
-                Log.printf("User '%s' entered passwd '%s'", user_id, password);
-                player = new Player(100, user_id);
+                if(user_id.equals("123")) {
+                    player = new Player(100, user_id);
+                } else {
+                    player = new Player(101, user_id);
+                }
+                
             }
             if (player == null) {
                 responseLogin.setStatus((short) 1); // User info is incorrect

@@ -11,14 +11,17 @@ import core.GameClient;
 public class Player {
 
     private int player_id;
+    private boolean ready;
     private String username;
     private GameClient client; // References GameClient instance
+    private Hand hand;
 
     public Player(int player_id) {
         this.player_id = player_id;
     }
 
     public Player(int player_id, String username) {
+        this.ready = false;
         this.player_id = player_id;
         this.username = username;
     }
@@ -45,6 +48,22 @@ public class Player {
 
     public GameClient setClient(GameClient client) {
         return this.client = client;
+    }
+
+    public void setHand(Hand hand) {
+        this.hand = hand;
+    }
+
+    public Hand getHand() {
+        return this.hand;
+    }
+
+    public boolean getReady() {
+        return this.ready;
+    }
+
+    public void setReady(boolean ready) {
+        this.ready = ready;
     }
 
     @Override

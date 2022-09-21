@@ -12,6 +12,9 @@ public class Constants {
     public final static short SMSG_HEARTBEAT = 202;
     public final static short CMSG_PLAYERS = 103;
     public final static short SMSG_PLAYERS = 203;
+    public final static short CMSG_START = 105;
+    public final static short SMSG_START = 205;
+    public final static short SMSG_GET_PLAYER_HAND = 206;
     // Other
     public static final float BIOMASS_SCALE = 1000;
     public static final String CLIENT_VERSION = "1.00";
