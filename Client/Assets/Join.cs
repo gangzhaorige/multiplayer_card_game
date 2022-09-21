@@ -37,7 +37,7 @@ public class Join : MonoBehaviour
 	public void ResponseLogin(ExtendedEventArgs eventArgs) {
 		ResponseLoginEventArgs args = eventArgs as ResponseLoginEventArgs;
 		if (args.status == 0) {
-			Debug.Log ("Successful Login response : " + args.ToString());
+			Debug.Log ("Successfully joined the lobby : " + args.ToString());
 			SceneManager.LoadScene("Lobby");
 		} else {
 			Debug.Log("Login Failed");

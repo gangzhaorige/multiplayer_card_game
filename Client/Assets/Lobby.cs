@@ -35,12 +35,9 @@ public class Lobby : MonoBehaviour
 	public void ResponseStart(ExtendedEventArgs eventArgs) {
 		ResponseStartEventArgs args = eventArgs as ResponseStartEventArgs;
 		if (args.status == 0) {
-			Debug.Log ("Successful started Game : " + args.ToString());
-            for(int i = 0; i < args.numOfCards; i++) {
-                Debug.Log ("Card " + i + " " + args.cards[i]);
-            }
+			Debug.Log ("Successfully ready." + args.ToString());
 		} else {
-			Debug.Log("Login Failed");
+			Debug.Log("Waiting for others to start...");
 		}
 	}
 
