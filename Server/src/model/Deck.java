@@ -32,9 +32,9 @@ public class Deck {
         return deck.remove(deck.size() - 1);
     }
 
-    public void dealCardToPlayer(Player player) {
+    public void dealCardsToPlayer(Player player, int numOfCard) {
         Hand hand = new Hand();
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i < numOfCard; i++) {
             hand.addCard(removeTopCard());
         }
         player.setHand(hand);

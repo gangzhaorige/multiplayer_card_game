@@ -13,7 +13,7 @@ public class Game {
         this.pile = new Pile();
         this.players = players;
         for(Player p : players) {
-            deck.dealCardToPlayer(p);
+            deck.dealCardsToPlayer(p, 4);
         }
     }
 
