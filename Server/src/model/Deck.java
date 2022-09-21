@@ -2,34 +2,55 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Deck {
-    private List<Card> cards;
+
+    private List<Card> deck;
 
     public Deck() {
-        cards = new ArrayList<>();
+        deck = new ArrayList<>();
         for(int i = 1; i < 30; i++) {
-            cards.add(new Card(i));
+            addCard(new Card(i));
         }
+        shuffleDeck();
     }
 
     public List<Card> getCards() {
-        return this.cards;
+        return this.deck;
     }
 
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
+    public void setCards(List<Card> deck) {
+        this.deck = deck;
+    }
+
+    public void addCard(Card card) {
+        deck.add(card);
     }
 
     public Card removeTopCard() {
-        return cards.remove(cards.size() - 1);
+        return deck.remove(deck.size() - 1);
     }
 
-    public void dealCard(Player player) {
+    public void dealCardToPlayer(Player player) {
         Hand hand = new Hand();
         for(int i = 0; i < 4; i++) {
             hand.addCard(removeTopCard());
         }
         player.setHand(hand);
+    }
+
+    public void shuffleDeck() {
+        Random rand = new Random();
+        for(int i = 0; i < deck.size(); i++) {
+            int random_index = rand.nextInt(deck.size());
+            swap(i, random_index);
+        }
+    }
+
+    public void swap(int i, int j) {
+        Card card = deck.get(i);
+        deck.set(i, deck.get(j));
+        deck.set(j, card);
     }
 }
