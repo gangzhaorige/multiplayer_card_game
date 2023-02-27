@@ -8,6 +8,9 @@ public class Hand : MonoBehaviour
     private GameObject mainObject;
     private MessageQueue msgQueue;
 	private ConnectionManager cManager;
+    public GameObject card; 
+
+    
     [SerializeField] private TMP_Text hand;
     void Awake() {
 		mainObject = GameObject.Find("Network");

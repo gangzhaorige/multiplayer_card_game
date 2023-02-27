@@ -326,7 +326,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &426406788
 GameObject:
@@ -424,7 +424,7 @@ RectTransform:
   - {fileID: 1983526693}
   - {fileID: 976478451}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: 976478453}
   - component: {fileID: 976478452}
   - component: {fileID: 976478454}
+  - component: {fileID: 976478455}
   m_Layer: 5
   m_Name: Hand
   m_TagString: Untagged
@@ -728,6 +729,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 976478452}
+--- !u!114 &976478455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976478450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075dceae0af824b70b3c648d90a8f134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 5020285552606329812, guid: 73219dc559bd946d78aed00ba53eeff4, type: 3}
+  hand: {fileID: 0}
 --- !u!1 &999163236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1122,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 20.4
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1132,14 +1147,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105936141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.038406268, y: -0, z: -0, w: 0.9992623}
+  m_LocalPosition: {x: -332.023, y: 391.719, z: 29.978}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.402, y: 0, z: 0}
 --- !u!114 &2105936145
 MonoBehaviour:
   m_ObjectHideFlags: 0
