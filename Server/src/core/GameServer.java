@@ -38,6 +38,7 @@ public class GameServer {
     // Reference Tables
     private Map<String, GameClient> activeThreads = new HashMap<String, GameClient>(); // Session ID -> Client
     private Map<Integer, Player> activePlayers = new HashMap<Integer, Player>(); // Player ID -> Player
+    private MatchmakingQueue queue = new MatchmakingQueue();
     /**
      * Create the GameServer by setting up the request types and creating a
      * connection with the database.
@@ -155,18 +156,25 @@ public class GameServer {
         return new ArrayList<Player>(activePlayers.values());
     }
 
-    public Player getActivePlayer(int player_id) {
-        return activePlayers.get(player_id);
+    public Player getActivePlayer(int playerId) {
+        return activePlayers.get(playerId);
     }
 
     public void setActivePlayer(Player player) {
         activePlayers.put(player.getID(), player);
     }
     
-    public void removeActivePlayer(int player_id) {
-        activePlayers.remove(player_id);
+    public void removeActivePlayer(int playerId) {
+        activePlayers.remove(playerId);
     }
 
+    public void enqueue(Player player) {
+        queue.addPlayer(player);
+    }
+
+    public void poll(int playerId) {
+        queue.removePlayer(playerId);
+    }
     /**
      * Delete a player's GameClient thread out of the activeThreads
      *
@@ -182,16 +190,16 @@ public class GameServer {
      *
      * @param args contains additional launching parameters
      */
+
     public static void main(String[] args) {
         try {
-            Log.printf("World of Balance Server v%s is starting...\n", Constants.CLIENT_VERSION);
+            Log.printf("Server v%s is starting...\n", Constants.CLIENT_VERSION);
 
             gameServer = new GameServer();
             gameServer.run();
         } catch (Exception ex) {
             Log.println_e("Server Crashed!");
             Log.println_e(ex.getMessage());
-
             try {
                 Thread.sleep(10000);
                 Log.println_e("Server is now restarting...");

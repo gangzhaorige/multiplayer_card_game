@@ -24,6 +24,9 @@ public class GameRequestTable<T> {
         add(Constants.CMSG_AUTH, "RequestLogin");
         add(Constants.CMSG_HEARTBEAT, "RequestHeartbeat");
         add(Constants.CMSG_PLAYERS, "RequestPlayers");
+
+        // Matchmaking
+        add(Constants.CMSG_ENQUEUE, "RequestEnqueue");
     }
 
     /**
